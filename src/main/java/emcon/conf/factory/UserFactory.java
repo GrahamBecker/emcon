@@ -6,7 +6,8 @@ import emcon.domain.UserDetails;
 
 
 /**
- * Created by graham on 2015/04/26.
+ * Created by
+ * GrahamBecker on 2015/04/26.
  */
 public class UserFactory {
 

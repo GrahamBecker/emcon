@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Created by graham on 2015/04/26.
  */
 @Embeddable
-class ContactInformation implements Serializable {
+public class ContactInformation implements Serializable {
     private String cellNumber;
     private String homeNumber;
     private String email;
