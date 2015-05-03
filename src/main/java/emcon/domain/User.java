@@ -12,7 +12,7 @@ public class User implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true)
-    private int regNo;
+    private String regNo;
     private String firstName;
     private String lastName;
     private String dob;
@@ -25,7 +25,7 @@ public class User implements Serializable{
         lastName=builder.lastName;
         dob=builder.dob;
     }
-    public int getRegNo() {
+    public String getRegNo() {
         return regNo;
     }
     public String getFirstName() {
@@ -39,12 +39,12 @@ public class User implements Serializable{
     }
 
     public static class Builder{
-        private int regNo;
+        private String regNo;
         private String firstName;
         private String lastName;
         private String dob;
 
-        public Builder(int regNo) {
+        public Builder(String regNo) {
             this.regNo = regNo;
         }
         public Builder firstName(String value){

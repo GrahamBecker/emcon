@@ -10,7 +10,7 @@ import emcon.domain.UserDetails;
  */
 public class UserFactory {
 
-    public static User createUser(int regNo, String firstName, String lastName, String dob){
+    public static User createUser(String regNo, String firstName, String lastName, String dob){
 
         User user = new User
                 .Builder(regNo)

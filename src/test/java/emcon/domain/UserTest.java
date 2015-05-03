@@ -18,9 +18,9 @@ public class UserTest {
     @Test
     public void testCreateUser() throws Exception{
 
-        User user = UserFactory.createUser(12345,"Graham","Becker","20/11/1984");
+        User user = UserFactory.createUser("C8001","Graham","Becker","20/11/1984");
 
-        Assert.assertEquals(12345,user.getRegNo());
+        Assert.assertEquals("C8001",user.getRegNo());
         Assert.assertEquals("Graham",user.getFirstName());
         Assert.assertEquals("Becker",user.getLastName());
         Assert.assertEquals("20/11/1984",user.getDob());
