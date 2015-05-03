@@ -6,4 +6,5 @@
 #### 2. contact the users next of kin without disclosing any personel information
 #### 3. assist medical proffesionals get medical details about users
 
+![alt text][UML Diagram]
 [UML Diagram]: https://github.com/GrahamBecker/emcon/blob/master/UML.jpg "UML Diagram"
