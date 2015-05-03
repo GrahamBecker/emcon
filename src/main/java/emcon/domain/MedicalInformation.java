@@ -35,18 +35,17 @@ public class MedicalInformation implements Serializable {
         private String allergies;
         private String additionalInfo;
 
-        public Builder bloodType(String value) {
+        public Builder(String bloodType) {
             this.bloodType = bloodType;
-            return this;
         }
 
         public Builder allergies(String value) {
-            this.allergies = allergies;
+            this.allergies = value;
             return this;
         }
 
         public Builder additionalInfo(String value) {
-            this.additionalInfo = additionalInfo;
+            this.additionalInfo = value;
             return this;
         }
 

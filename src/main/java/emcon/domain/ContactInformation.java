@@ -1,6 +1,6 @@
 package emcon.domain;
 
-import javax.persistence.Embeddable;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -8,8 +8,8 @@ import java.io.Serializable;
  */
 @Embeddable
 public class ContactInformation implements Serializable {
-    private int cellNumber;
-    private int homeNumber;
+    private String cellNumber;
+    private String homeNumber;
     private String email;
     private String skype;
 
@@ -20,11 +20,11 @@ public class ContactInformation implements Serializable {
         skype = builder.skype;
     }
 
-    public int getCellNumber(){
+    public String getCellNumber(){
         return cellNumber;
     }
 
-    public int getHomeNumber(){
+    public String getHomeNumber(){
         return homeNumber;
     }
 
@@ -37,28 +37,36 @@ public class ContactInformation implements Serializable {
     }
 
     public static class Builder {
-        private int cellNumber;
-        private int homeNumber;
+        private String cellNumber;
+        private String homeNumber;
         private String email;
         private String skype;
 
-        public Builder cellNumber(int value) {
+        public Builder(String cellNumber) {
             this.cellNumber = cellNumber;
-            return this;
         }
 
-        public Builder homeNumber(int value) {
-            this.homeNumber = homeNumber;
+
+        public Builder homeNumber(String value) {
+            this.homeNumber = value;
             return this;
         }
 
         public Builder email(String value) {
-            this.email = email;
+            this.email = value;
             return this;
         }
 
         public Builder skype(String value) {
-            this.skype = skype;
+            this.skype = value;
+            return this;
+        }
+
+        public Builder copy(ContactInformation value){
+            this.cellNumber=value.getCellNumber();
+            this.homeNumber=value.getHomeNumber();
+            this.email=value.getEmail();
+            this.skype=value.getSkype();
             return this;
         }
 

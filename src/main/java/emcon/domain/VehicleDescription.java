@@ -42,23 +42,22 @@ public class VehicleDescription implements Serializable {
         private String vehColor;
         private int vehYear;
 
-        public Builder vehMake(String value) {
+        public Builder(String vehMake) {
             this.vehMake = vehMake;
-            return this;
         }
 
         public Builder vehModel(String value) {
-            this.vehModel = vehModel;
+            this.vehModel = value;
             return this;
         }
 
         public Builder vehColor(String value) {
-            this.vehColor = vehColor;
+            this.vehColor = value;
             return this;
         }
 
         public Builder vehYear(int value) {
-            this.vehYear = vehYear;
+            this.vehYear = value;
             return this;
         }
 

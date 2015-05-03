@@ -22,9 +22,8 @@ public class NextOfKin implements Serializable {
         private String relationship;
 
 
-        public Builder relationship(String value) {
+        public Builder (String relationship) {
             this.relationship = relationship;
-            return this;
         }
 
         public NextOfKin build() {

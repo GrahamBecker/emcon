@@ -8,47 +8,26 @@ import java.io.Serializable;
  */
 @Embeddable
 public class UserDetails implements Serializable {
-    private String firstName;
-    private String lastName;
-    private String dob;
+    private String emconNo;
 
     public UserDetails(Builder builder){
-        firstName = builder.firstName;
-        lastName = builder.lastName;
-        dob = builder.dob;
+        emconNo = builder.emconNo;
+
     }
 
-    public String getFirstName(){
-        return firstName;
+    public String getEmconNo(){
+        return emconNo;
     }
 
-    public String getLastName(){
-        return lastName;
-    }
-
-    public String getDob(){
-        return dob;
-    }
 
     public static class Builder {
-        private String firstName;
-        private String lastName;
-        private String dob;
+        private String emconNo;
 
-        public Builder firstName(String value) {
-            this.firstName = firstName;
-            return this;
+
+        public Builder(String emconNo) {
+            this.emconNo = emconNo;
         }
 
-        public Builder lastName(String value) {
-            this.lastName = lastName;
-            return this;
-        }
-
-        public Builder dob(String value) {
-            this.dob = dob;
-            return this;
-        }
 
         public UserDetails build() {
             return new UserDetails(this);

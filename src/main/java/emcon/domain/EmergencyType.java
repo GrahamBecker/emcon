@@ -29,13 +29,13 @@ public class EmergencyType implements Serializable {
         private String description;
         private String ice;
 
-        public Builder description(String value) {
+        public Builder(String description) {
             this.description = description;
-            return this;
         }
 
+
         public Builder ice(String value) {
-            this.ice = ice;
+            this.ice = value;
             return this;
         }
 

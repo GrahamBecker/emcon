@@ -8,9 +8,9 @@ import java.io.Serializable;
  */
 @Embeddable
 public class UniqueIdentifiers implements Serializable {
-    private int idNo;
+    private String idNo;
     private String vehicleReg;
-    private int imeiNumber;
+    private String imeiNumber;
 
     public UniqueIdentifiers(Builder builder){
         idNo = builder.idNo;
@@ -18,7 +18,7 @@ public class UniqueIdentifiers implements Serializable {
         imeiNumber = builder.imeiNumber;
     }
 
-    public int getIdNo(){
+    public String getIdNo(){
         return idNo;
     }
 
@@ -26,27 +26,26 @@ public class UniqueIdentifiers implements Serializable {
         return vehicleReg;
     }
 
-    public int getImeiNumber(){
+    public String getImeiNumber(){
         return imeiNumber;
     }
 
     public static class Builder {
-        private int idNo;
+        private String idNo;
         private String vehicleReg;
-        private int imeiNumber;
+        private String imeiNumber;
 
-        public Builder idNo(int value) {
+        public Builder(String idNo) {
             this.idNo = idNo;
-            return this;
         }
 
         public Builder vehicleReg(String value) {
-            this.vehicleReg = vehicleReg;
+            this.vehicleReg = value;
             return this;
         }
 
-        public Builder imeiNumber(int value) {
-            this.imeiNumber = imeiNumber;
+        public Builder imeiNumber(String value) {
+            this.imeiNumber = value;
             return this;
         }
 

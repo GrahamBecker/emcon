@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class MedAid implements Serializable {
     private String medAidNo;
     private String medAidCompany;
-    private int medAidContact;
+    private String medAidContact;
 
     public MedAid(Builder builder){
         medAidNo = builder.medAidNo;
@@ -26,26 +26,25 @@ public class MedAid implements Serializable {
         return medAidCompany;
     }
 
-    public int getMedAidContact(){ return medAidContact;
+    public String getMedAidContact(){ return medAidContact;
     }
 
     public static class Builder {
         private String medAidNo;
         private String medAidCompany;
-        private int medAidContact;
+        private String medAidContact;
 
-        public Builder medAidNo(String value) {
+        public Builder(String medAidNo) {
             this.medAidNo = medAidNo;
-            return this;
         }
 
         public Builder medAidCompany(String value) {
-            this.medAidCompany = medAidCompany;
+            this.medAidCompany = value;
             return this;
         }
 
-        public Builder medAidContact(int value) {
-            this.medAidContact = medAidContact;
+        public Builder medAidContact(String value) {
+            this.medAidContact = value;
             return this;
         }
 
