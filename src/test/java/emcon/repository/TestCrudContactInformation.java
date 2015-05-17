@@ -21,7 +21,7 @@ public class TestCrudContactInformation {
     private String cellNumber;
 
     @Autowired
-    ContactInformationRepository repository;
+    private ContactInformationRepository repository;
 
     @Test
     public void testCreate() throws Exception {

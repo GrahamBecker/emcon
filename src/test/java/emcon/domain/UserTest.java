@@ -6,6 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.test.context.TestExecutionListeners;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by graham on 2015/04/26.
  */
@@ -18,12 +21,16 @@ public class UserTest {
     @Test
     public void testCreateUser() throws Exception{
 
-        User user = UserFactory.createUser("C8001","Graham","Becker","20/11/1984");
+        Long rNo = 8000L;
 
-        Assert.assertEquals("C8001",user.getRegNo());
+        User user = UserFactory.createUser(rNo,"Graham","Becker","20/11/1984");
+
+        Assert.assertEquals(rNo,user.getRegNo());
         Assert.assertEquals("Graham",user.getFirstName());
         Assert.assertEquals("Becker",user.getLastName());
         Assert.assertEquals("20/11/1984",user.getDob());
+
+
 
     }
 

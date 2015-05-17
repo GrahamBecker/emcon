@@ -11,8 +11,7 @@ import java.util.Date;
 public class User implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(unique = true)
-    private String regNo;
+    private Long regNo;
     private String firstName;
     private String lastName;
     private String dob;
@@ -25,7 +24,7 @@ public class User implements Serializable{
         lastName=builder.lastName;
         dob=builder.dob;
     }
-    public String getRegNo() {
+    public Long getRegNo() {
         return regNo;
     }
     public String getFirstName() {
@@ -39,12 +38,12 @@ public class User implements Serializable{
     }
 
     public static class Builder{
-        private String regNo;
+        private Long regNo;
         private String firstName;
         private String lastName;
         private String dob;
 
-        public Builder(String regNo) {
+        public Builder(Long regNo) {
             this.regNo = regNo;
         }
         public Builder firstName(String value){
@@ -72,12 +71,12 @@ public class User implements Serializable{
         }
     }
 
-/*    @Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        return !(regNo != null ? !regNo.equals(User.regNo) : User.regNo != null);
+        return !(regNo != null ? !regNo.equals(user.regNo) : user.regNo != null);
     }
     @Override
     public int hashCode() {
@@ -85,10 +84,10 @@ public class User implements Serializable{
     }
     @Override
     public String toString() {
-        return "Course{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+        return "User{" +
+                "regNo=" + regNo +
+                ", FirstName='" + firstName + '\'' +
                 '}';
     }
-    */
+
 }
