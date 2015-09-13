@@ -30,6 +30,8 @@ public class TestCrudMedicalInforamtion {
                 .Builder("A Positive")
                 .allergies("Peanuts")
                 .additionalInfo("None")
+                .medAid("None")
+                .medAidNumber("N/A")
                 .build();
 
         repository.save(medInfo);
@@ -53,6 +55,8 @@ public class TestCrudMedicalInforamtion {
                 .Builder("B Positive")
                 .allergies("None")
                 .additionalInfo("None")
+                .medAid("Discovery Health")
+                .medAidNumber("A123456")
                 .build();
 
         repository.save(newMedInfo);
@@ -60,6 +64,8 @@ public class TestCrudMedicalInforamtion {
         Assert.assertEquals("B Positive", newMedInfo.getBloodType());
         Assert.assertEquals("None",newMedInfo.getAllergies());
         Assert.assertEquals("None", newMedInfo.getAdditionalInfo());
+        Assert.assertEquals("Discovery Health", newMedInfo.getMedAid());
+        Assert.assertEquals("A123456", newMedInfo.getMedAidNumber());
 
     }
     @Test

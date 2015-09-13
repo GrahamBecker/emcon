@@ -15,6 +15,8 @@ public class User implements Serializable{
     private String firstName;
     private String lastName;
     private String dob;
+    private String address;
+    private String contact;
 
     private User() {
     }
@@ -23,6 +25,8 @@ public class User implements Serializable{
         firstName=builder.firstName;
         lastName=builder.lastName;
         dob=builder.dob;
+        address=builder.address;
+        contact=builder.contact;
     }
     public Long getRegNo() {
         return regNo;
@@ -36,12 +40,20 @@ public class User implements Serializable{
     public String getDob() {
         return dob;
     }
+    public String getAddress() {
+        return address;
+    }
+    public String getContact() {
+        return contact;
+    }
 
     public static class Builder{
         private Long regNo;
         private String firstName;
         private String lastName;
         private String dob;
+        private String address;
+        private String contact;
 
         public Builder(Long regNo) {
             this.regNo = regNo;
@@ -58,12 +70,22 @@ public class User implements Serializable{
             this.dob=value;
             return this;
         }
+        public Builder address(String value){
+            this.address=value;
+            return this;
+        }
+        public Builder contact(String value){
+            this.contact=value;
+            return this;
+        }
 
         public Builder copy(User value){
             this.regNo=value.getRegNo();
             this.firstName=value.getFirstName();
             this.lastName=value.getLastName();
             this.dob=value.getDob();
+            this.address=value.getAddress();
+            this.contact=value.getContact();
             return this;
         }
         public User build(){

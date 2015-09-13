@@ -11,13 +11,17 @@ public class MedicalInformationFactory {
     public static MedicalInformation createMedicalInformation
             (String bloodType,
              String allergies,
-             String additionalInfo)
+             String additionalInfo,
+             String medAid,
+             String medAidNumber)
     {
 
             MedicalInformation medInfo = new MedicalInformation
-                .Builder(bloodType)
-                .allergies(allergies)
-                .additionalInfo(additionalInfo)
+                    .Builder(bloodType)
+                    .allergies(allergies)
+                    .additionalInfo(additionalInfo)
+                    .medAid(medAid)
+                    .medAidNumber(medAidNumber)
                 .build();
 
         return medInfo;

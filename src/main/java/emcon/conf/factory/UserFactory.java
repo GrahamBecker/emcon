@@ -11,13 +11,15 @@ import emcon.domain.UserDetails;
  */
 public class UserFactory {
 
-    public static User createUser(Long regNo, String firstName, String lastName, String dob){
+    public static User createUser(Long regNo, String firstName, String lastName, String dob, String address, String contact){
 
         User user = new User
                 .Builder(regNo)
                 .firstName(firstName)
                 .lastName(lastName)
                 .dob(dob)
+                .address(address)
+                .contact(contact)
                 .build();
         return user;
     }

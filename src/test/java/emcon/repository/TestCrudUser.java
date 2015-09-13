@@ -24,7 +24,7 @@ public class TestCrudUser extends AbstractTestNGSpringContextTests{
     @Test
     public void create() throws Exception {
         System.out.println("Hello World");
-        User user = new User.Builder(8000L).firstName("Graham").lastName("Becker").dob("20/11/1984").build();
+        User user = new User.Builder(8000L).firstName("Graham").lastName("Becker").dob("20/11/1984").address("15 Oranje Street").contact("graham@fang.co.za").build();
         repository.save(user);
         regNo=user.getRegNo();
         Assert.assertNotNull(user.getRegNo());
@@ -39,7 +39,7 @@ public class TestCrudUser extends AbstractTestNGSpringContextTests{
     @Test(dependsOnMethods = "read")
     public void update() throws Exception {
         User user = repository.findOne(regNo);
-        User newUser = new User.Builder(8001L).firstName("Steven").lastName("Jones").dob("1 January 1990").build();
+        User newUser = new User.Builder(8001L).firstName("Steven").lastName("Jones").dob("1 January 1990").address("16 Brian Street").contact("steven@brianstreet.co.za").build();
         repository.save(newUser);
 
         User updatedUser = repository.findOne(regNo);

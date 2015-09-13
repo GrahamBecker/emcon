@@ -28,6 +28,9 @@ public class TestCrudNextOfKin {
 
         NextOfKin NOK = new NextOfKin
                 .Builder("Brother")
+                .name("Chris")
+                .surname("Becker")
+                .contact("0219051234")
                 .build();
 
         repository.save(NOK);
@@ -41,6 +44,9 @@ public class TestCrudNextOfKin {
     public void testRead() throws Exception {
         NextOfKin NOK = repository.findOne(relationship);
         Assert.assertEquals("Brother",NOK.getRelationship());
+        Assert.assertEquals("Chris",NOK.getName());
+        Assert.assertEquals("Becker",NOK.getSurname());
+        Assert.assertEquals("0219051234",NOK.getContact());
     }
     @Test
     public void testUpdate() throws Exception {
@@ -49,11 +55,17 @@ public class TestCrudNextOfKin {
 
         NextOfKin newNOK = new NextOfKin
                 .Builder("Wife")
+                .name("Corne")
+                .surname("Becker")
+                .contact("071234568")
                 .build();
 
         repository.save(newNOK);
 
         Assert.assertEquals("Wife", newNOK.getRelationship());
+        Assert.assertEquals("Corne",NOK.getName());
+        Assert.assertEquals("Becker", NOK.getSurname());
+        Assert.assertEquals("071234568",NOK.getContact());
 
     }
     @Test

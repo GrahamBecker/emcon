@@ -23,12 +23,14 @@ public class UserTest {
 
         Long rNo = 8000L;
 
-        User user = UserFactory.createUser(rNo,"Graham","Becker","20/11/1984");
+        User user = UserFactory.createUser(rNo,"Graham","Becker","20/11/1984","15 Oranje Street", "graham@fang.co.za");
 
         Assert.assertEquals(rNo,user.getRegNo());
         Assert.assertEquals("Graham",user.getFirstName());
         Assert.assertEquals("Becker",user.getLastName());
         Assert.assertEquals("20/11/1984",user.getDob());
+        Assert.assertEquals("15 Oranje Street",user.getAddress());
+        Assert.assertEquals("graham@fang.co.za",user.getContact());
 
 
 

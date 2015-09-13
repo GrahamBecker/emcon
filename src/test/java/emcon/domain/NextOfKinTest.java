@@ -17,9 +17,12 @@ public class NextOfKinTest {
     @Test
     public void testNextOfKin() throws Exception {
 
-        NextOfKin NOK = NextOfKinFactory.createNextOfKin("Brother");
+        NextOfKin NOK = NextOfKinFactory.createNextOfKin("Brother", "Chris", "Becker", "021905123");
 
         Assert.assertEquals("Brother", NOK.getRelationship());
+        Assert.assertEquals("Chris", NOK.getName());
+        Assert.assertEquals("Becker", NOK.getSurname());
+        Assert.assertEquals("021905123", NOK.getContact());
 
     }
 }
